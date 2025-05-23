@@ -2,14 +2,15 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { List, ListItem } from "../components/List"
 import * as styles from "../components/index.module.css"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <ul className={styles.list}>
+    <List width={[1, 2/3, 7/8]} p={2}>
       {
         data.allContentfulRecipe.edges.map(edge  => (
-          <li key={edge.node.name}>
+          <ListItem p={3} key={edge.node.name}>
             <Link to={edge.node.name}>
               {edge.node.name}
             </Link>
@@ -17,10 +18,10 @@ const IndexPage = ({ data }) => (
             <p>By {edge.node.author
             }</p>
           </div>
-          </li>
+          </ListItem>
         ))
       }
-    </ul>
+    </List>
   </Layout>
 )
 
