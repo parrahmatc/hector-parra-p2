@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import styled , {ThemeConsumer} from "styled-components";
+import styled from "styled-components";
 import { Flex } from "rebass";
-import { H1 } from "../Heading";
-import { SearchButton } from "../Button";
-import { Section } from "../Section";
+import { H1 } from "../components/Heading";
+import { SearchButton } from "../components/Button";
+import { Section } from "../components/Section";
 
 const StyledHeader = styled.header`
     margin: 0 auto;
@@ -33,19 +33,19 @@ const MediaQuery = styled.div`
   display: none;
 }
 `
-const Header = () => (
+const header = () => (
 <StyledHeader>
   <Section width={11/12} flex-direction="column" justify-content="center">
     <Nav>
       <Title>
         <StyledLink to="/">
-        {siteTitle}
+        Hector's Recipe Book
         </StyledLink>
       </Title>
       <MediaQuery>
-        <StyledLink to="/">Hector's Recipe Book</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink to="/">Home </StyledLink>
+        <StyledLink to="/about">About </StyledLink>
+        <StyledLink to="/contact">Contact </StyledLink>
       </MediaQuery>
       <SearchButton variant="contrast" />
     </Nav>
