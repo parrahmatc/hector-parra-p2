@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import { H1 } from "../components/Heading"
 
 const Recipe = ({ data }) => {
     if (!data?.contentfulRecipe) {
@@ -14,7 +15,7 @@ const Recipe = ({ data }) => {
 
     return (
         <Layout>
-            <h1>{name}</h1>
+            <H1>{name}</H1>
             <p>By {author}</p>
             <p>Prep Time: {prepTime}</p>
             <p>Cook Time: {cookTime}</p>
